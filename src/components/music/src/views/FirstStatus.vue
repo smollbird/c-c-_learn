@@ -1,10 +1,14 @@
 <template>
-  <div class="music-first_status">
+  <div class="music-first_status" @mouseenter="handler">
     <Icon name="tinggeshiqu" />
   </div>
 </template>
 <script setup lang="ts">
-import Icon from "@/components/Icon/index.vue";
+import Icon from "@/components/icon/index.vue";
+const emits = defineEmits(['changeStatus']);
+const handler = ()=>{
+  emits('changeStatus','second');
+}
 </script>
 
 <style lang="less" scoped>
